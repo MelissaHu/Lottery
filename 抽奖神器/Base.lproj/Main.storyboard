@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ri1-hx-gPe">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--AddLuckyFellows-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="AddLuckyFellowsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWn-d8-Rp5">
+                                <rect key="frame" x="11" y="269" width="299" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="eWn-d8-Rp5" secondAttribute="centerY" id="WxC-SY-HWb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eWn-d8-Rp5" secondAttribute="trailing" constant="-6" id="ln7-W2-cMp"/>
+                            <constraint firstItem="eWn-d8-Rp5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-5" id="mxF-fL-Fgf"/>
+                            <constraint firstAttribute="centerX" secondItem="eWn-d8-Rp5" secondAttribute="centerX" id="nOk-tl-Hfx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="AddLuckyFellows" id="n6t-d0-feC">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="q9u-nE-si0">
+                            <connections>
+                                <segue destination="TNG-X0-1RZ" kind="unwind" unwindAction="unwindToList:" id="zc8-GL-wZD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uIQ-io-sXa">
+                            <connections>
+                                <segue destination="TNG-X0-1RZ" kind="unwind" unwindAction="unwindToList:" id="AgM-n5-Tox"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="uIQ-io-sXa" id="hXh-QM-Tpm"/>
+                        <outlet property="textField" destination="eWn-d8-Rp5" id="THb-iw-k1c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <exit id="TNG-X0-1RZ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="890"/>
+        </scene>
+        <!--LuckyFellowListTable-->
+        <scene sceneID="lRr-0X-C7R">
+            <objects>
+                <tableViewController id="uAi-z4-dwg" customClass="LuckyFellowListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eBe-bb-dDw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListPrototypeCell" textLabel="DCC-gF-5yf" style="IBUITableViewCellStyleDefault" id="FkB-Bh-Cvy">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FkB-Bh-Cvy" id="1xB-rM-au6">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="瓶瓶" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DCC-gF-5yf">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uAi-z4-dwg" id="vAN-ex-OTK"/>
+                            <outlet property="delegate" destination="uAi-z4-dwg" id="9zy-gZ-ug9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="LuckyFellowListTable" id="Grv-v9-hV6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="8eY-uO-Bhp">
+                            <connections>
+                                <segue destination="P3d-yX-hhr" kind="push" id="gNd-Dz-vhJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lcK-CF-Qgo">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="push" id="JDn-ft-hdT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTd-J8-LQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="393" y="408"/>
+        </scene>
+        <!--Lucky Fellow Show View Controller-->
+        <scene sceneID="OAs-wh-3iX">
+            <objects>
+                <viewController id="P3d-yX-hhr" customClass="LuckyFellowShowViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mT9-3P-YFS"/>
+                        <viewControllerLayoutGuide type="bottom" id="y0X-JB-84N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zu0-Oc-v71">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rtt-6C-lQ9">
+                                <rect key="frame" x="16" y="269" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Rtt-6C-lQ9" secondAttribute="centerX" id="5WF-ly-8RK"/>
+                            <constraint firstAttribute="centerY" secondItem="Rtt-6C-lQ9" secondAttribute="centerY" id="9Mt-HJ-IfU"/>
+                            <constraint firstItem="Rtt-6C-lQ9" firstAttribute="leading" secondItem="zu0-Oc-v71" secondAttribute="leadingMargin" id="FD8-dQ-5j5"/>
+                            <constraint firstItem="Rtt-6C-lQ9" firstAttribute="trailing" secondItem="zu0-Oc-v71" secondAttribute="trailingMargin" id="emf-yC-bIN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3hU-oD-m7U"/>
+                    <connections>
+                        <outlet property="ShowOwnner" destination="Rtt-6C-lQ9" id="kvb-j9-sJH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CgC-nn-Lh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="274"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N7Z-KC-gLw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ri1-hx-gPe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ty8-mS-vJk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uAi-z4-dwg" kind="relationship" relationship="rootViewController" id="Jag-bN-kMH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CG0-aS-ink" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111" y="408"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
